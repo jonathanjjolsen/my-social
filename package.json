@@ -1,0 +1,17 @@
+{
+  "name": "my-social",
+  "version": "1.0.0",
+  "description": "The beginning stages of a social media site. Using MongoDB and Express to modify user info.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express.js": "^1.0.0",
+    "mongoose": "^7.3.1"
+  }
+}
