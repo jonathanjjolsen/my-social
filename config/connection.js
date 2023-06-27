@@ -1,9 +1,10 @@
 //Import mongoose for DB connection
-const { connect, connection } = require('mongoose');
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 //Or statement for default route if variables are unavailable
-const connectionString = (process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mySocial')
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/mySocial';
 
-connect(connectionString);
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
 
-module.exports = connection;
+module.exports = mongoose.connection;
