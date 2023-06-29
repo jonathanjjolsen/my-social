@@ -29,9 +29,12 @@ const emails = [
 //Picks out a random item from an array
 const randomGen = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-//
-const randomUser = () =>
-`${randomGen(usernames)} ${randomGen(emails)}`
+//Get a random Username
+const randomUsername = () =>
+randomGen(usernames);
 
-module.exports = { randomUser };
+const randomEmail = () =>
+randomGen(emails);
+
+module.exports = { randomUsername, randomEmail };
 
