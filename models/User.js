@@ -1,5 +1,5 @@
 //Import mongoose packages
-const { Schema, Types, model } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 
 const userModel = new Schema(
