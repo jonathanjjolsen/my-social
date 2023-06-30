@@ -26,16 +26,23 @@ const emails = [
 'ghost@aol.com',
 ];
 
-//Picks out a random item from an array
-const randomGen = (arr) => arr[Math.floor(Math.random() * arr.length)];
-
 //Get a random Username
-const randomUsername = () =>
-randomGen(usernames);
+const randomUsername = () => {
+    const index = Math.floor(Math.random() * usernames.length);
+    const selectedUsername = usernames[index];
+    usernames.splice(index, 1);
+
+    return selectedUsername;
+}
 
 //Get a random email
-const randomEmail = () =>
-randomGen(emails);
+const randomEmail = () => {
+    const index = Math.floor(Math.random() * emails.length);
+    const selectedEmail = emails[index];
+    emails.splice(index, 1);
+
+    return selectedEmail;
+}
 
 module.exports = { randomUsername, randomEmail };
 

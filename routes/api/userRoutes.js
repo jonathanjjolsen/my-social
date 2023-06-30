@@ -8,6 +8,7 @@ const {
 //Get route for all users
 router.route('/').get(getUsers);
 
+//Route for single user functionality
 router
     .route('/:userId')
     .get(getSingleUser);
