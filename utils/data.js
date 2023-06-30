@@ -33,6 +33,7 @@ const randomGen = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const randomUsername = () =>
 randomGen(usernames);
 
+//Get a random email
 const randomEmail = () =>
 randomGen(emails);
 
