@@ -1,37 +1,36 @@
-const { Schema, model } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 
-const thoughtModel = new Schema(
+const reactionModel = new Schema(
     {
-        thoughtText:{
+        reactionId: {
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(),
+        },
+        
+        reactionBody: {
             type: String,
             required: true,
             maxlength: 280,
-            minlenght: 1,
         },
 
-        //Creates a time stamp with a default value of the current date/time
-        createdAt:{
-            type: Date,
-            default: Date.now,
-            get: timestamp => new Date(timestamp).toLocaleString,
-        },
-
-        username:{
+        username: {
             type: String,
             required: true,
         },
         
-        reactions:[reactionModel],
+        //Creates a time stamp with a default value of the current date/time
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            get: timestamp => new Date(timestamp).toLocaleString,
+        },
     },
     {
         toJSON: {
             getters: true,
-            virtuals: true,
         },
         id: false,
     }
-)
+);
 
-const Thought = model('Thought', thoughtModel);
-
-module.exports = Thought;
+module.exports = reactionModel;
