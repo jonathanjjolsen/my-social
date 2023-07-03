@@ -19,4 +19,13 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+    async createUser(req, res) {
+        try{
+            const user = await countReset.create(req, res);
+            res.json(user);
+        } catch (err) {
+            console.log(err);
+            return res.status(500).json(err);
+        }
+    }
 }
