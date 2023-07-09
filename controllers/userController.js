@@ -20,12 +20,29 @@ module.exports = {
         }
     },
     async createUser(req, res) {
+        console.log(req)
         try{
-            const user = await countReset.create(req, res);
+            const user = await User.create(req, res);
             res.json(user);
         } catch (err) {
             console.log(err);
             return res.status(500).json(err);
         }
-    }
+    },
+    async updateUser(req, res) {
+        try{
+            const user = await User.findOneAndUpdate(
+                { _id: req.params.userId },
+                { $set: req.body },
+                { runValidators: true, new: true },
+            );
+
+            if(!user) {
+                res.status(404).json({ message: 'No user with this ID currently exists.'})
+            }
+            res.json(user)
+        } catch(err) {
+            res.status(500).json(err);
+        }
+    },
 }
