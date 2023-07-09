@@ -22,7 +22,7 @@ module.exports = {
     async createUser(req, res) {
         console.log(req)
         try{
-            const user = await User.create(req, res);
+            const user = await User.create(req.body);
             res.json(user);
         } catch (err) {
             console.log(err);
