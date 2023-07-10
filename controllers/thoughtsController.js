@@ -9,4 +9,13 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+    
+    async addThought(req, res) {
+        try{
+            const thought = await Thought.create(req.body);
+            res.status(201).json(thought);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
 }
