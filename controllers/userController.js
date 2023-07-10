@@ -61,7 +61,7 @@ module.exports = {
         try{
             const user = await User.findOneAndUpdate(
                 { _id: req.params.userId },
-                { $addToSet: { friends: req.body.friendId || req.params.friendId }},
+                { $addToSet: { friends: req.params.friendId }},
                 { new: true}
             )
             if(!user) {
@@ -72,4 +72,24 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+    //Takes in friend ID through params for deletion
+    async removeFriend(req, res) {
+        try{
+            const user = await User.findOneAndUpdate(
+                { _id: req.params.userId },
+                { $pull: { friends: req.params.friendId } },
+                { new: true}
+            );
+            if(!user) {
+                return res.status(404).json({ message: 'No Friend Found'});
+            }
+            const deleted = !user.friends.includes(req.body.friendId);
+            if(deleted) {
+                return res.json({ message: 'Friend has been removed.'});
+            }
+            return res.json(user);
+        } catch (err) {
+            res.status(400).json(err);
+        }
+    }
 }
