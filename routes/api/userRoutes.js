@@ -10,8 +10,11 @@ const {
     removeFriend
 } = require('../../controllers/userController')
 
-//Get route for all users
-router.route('/').get(getUsers).post(createUser);
+//Get and Create Routes for all users
+router
+    .route('/')
+    .get(getUsers)
+    .post(createUser);
 
 //Route for single user functionality
 router
