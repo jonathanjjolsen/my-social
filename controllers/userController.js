@@ -19,6 +19,7 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+    //Create a new user
     async createUser(req, res) {
         console.log(req)
         try{
@@ -29,6 +30,7 @@ module.exports = {
             return res.status(500).json(err);
         }
     },
+    //Update an existing user
     async updateUser(req, res) {
         try{
             const user = await User.findOneAndUpdate(
@@ -45,6 +47,7 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+    //Delete a user
     async deleteUser(req, res) {
         try{
             const user = await User.findOneAndDelete({ _id: req.params.userId});
@@ -57,6 +60,7 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+    //Add a friend to a user
     async addFriend(req, res) {
         try{
             const user = await User.findOneAndUpdate(
@@ -72,7 +76,7 @@ module.exports = {
             res.status(500).json(err);
         }
     },
-    //Takes in friend ID through params for deletion
+    //Remove a friend from a user
     async removeFriend(req, res) {
         try{
             const user = await User.findOneAndUpdate(
