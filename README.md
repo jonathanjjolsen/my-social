@@ -45,6 +45,8 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 5. Start the server using the "npm start" script
 6. Test API endpoints in Isomnia at http://localhost:3001
 
+### [GitHub Repository](https://github.com/jonathanjjolsen/my-social)
+
 ### Endpoints:
 
 #### GET:
