@@ -46,31 +46,45 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 6. Test API endpoints in Isomnia at http://localhost:3001
 
 ### Endpoints:
-GET:
-    /api/users - get all users
-    /api/user/:userId - get single user by ID
-    /api/thoughts - get all thoughts
-    /api/thoughts/:thoughtId - get single thought by ID
-POST:
-    /api/users - create new user
-    /api/users/:userId/friends/:friendId - add friend to a user by ID
-    /api/thoughts - create a new thought
-    /api/thoughts/:thoughtId/reactions - add reaction to a thought
-PUT:
-    /api/users/:userId - update a user by ID
-    /api/thought/:thoughtId - update a thought by ID
-DELETE:
-    /api/users/:userId - delete a user by ID
-    /api/users/:userId/friends/:friendId - delete a friend by ID
-    /api/thoughts/:thoughtId - delete thought by ID
-    /api/thoughts/:thoughtId/reactions/:reactionId - delete reaction by ID
+
+#### GET:
+&emsp;/api/users - get all users
+<br/>&emsp;/api/user/:userId - get single user by ID
+<br/>&emsp;/api/thoughts - get all thoughts
+<br/>&emsp;/api/thoughts/:thoughtId - get single thought by ID
+
+#### POST:
+&emsp;/api/users - create new user
+<br/>&emsp;/api/users/:userId/friends/:friendId - add friend to a user by ID
+<br/>&emsp;/api/thoughts - create a new thought
+<br/>&emsp;/api/thoughts/:thoughtId/reactions - add reaction to a thought
+
+#### PUT:
+&emsp;/api/users/:userId - update a user by ID
+<br/>&emsp;/api/thought/:thoughtId - update a thought by ID
+
+#### DELETE:
+&emsp;/api/users/:userId - delete a user by ID
+<br/>&emsp;/api/users/:userId/friends/:friendId - delete a friend by ID
+<br/>&emsp;/api/thoughts/:thoughtId - delete thought by ID
+<br/>&emsp;/api/thoughts/:thoughtId/reactions/:reactionId - delete reaction by ID
 
 
 ### Walkthrough Video:
+Click [HERE](https://drive.google.com/file/d/1fnnh8JOCRf-pjIm9Ts6W-jaHuP4P2OFQ/view) to watch!
 
 ## Utilized Programs
+- Node.js: [20.3.0](https://nodejs.org/en)
+- Mongoose: [7.3.1](https://www.npmjs.com/package/mongoose)
+- Express.js: [1.0.0](https://expressjs.com/)
+- Insomnia: Website [Link](https://insomnia.rest/)
+- MongoDB: Website [Link](https://www.mongodb.com/)
 
 ## What I Learned
+- How to build a database using a NoSQL style structuring
+- How to effectivley mangage CRUD operations and endpoints
+- How to test endpoints using Insomnia
+- How to interact with MongoDB using Mongoose for schema creation
 
 ## Author
 Follow me on GitHub at [Jonathan Olsen](https://github.com/jonathanjjolsen)!
