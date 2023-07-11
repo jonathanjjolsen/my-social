@@ -10,7 +10,7 @@ This application is designed to mimic the early stages of a social media website
 - [What I Learned](#What-I-Learned)
 - [Author](#Author)
 
-## The Challenge:
+## The Challenge
 
 ### Assigned User Story:
 ```md
@@ -33,12 +33,38 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ```
 
 ### Screenshot:
+![](./Public/Assets/screenshot.png)
 
-## Usage Information:
+## Usage Information
 
-### Installation
+### Installation:
+1. Navigate to repository linked below
+2. Clone the repo to local storage
+3. After opening the application, open the terminal and install necessary packages using "npm i"
+4. Install Insomnia
+5. Start the server using the "npm start" script
+6. Test API endpoints in Isomnia at http://localhost:3001
 
-### Endpoints
+### Endpoints:
+GET:
+    /api/users - get all users
+    /api/user/:userId - get single user by ID
+    /api/thoughts - get all thoughts
+    /api/thoughts/:thoughtId - get single thought by ID
+POST:
+    /api/users - create new user
+    /api/users/:userId/friends/:friendId - add friend to a user by ID
+    /api/thoughts - create a new thought
+    /api/thoughts/:thoughtId/reactions - add reaction to a thought
+PUT:
+    /api/users/:userId - update a user by ID
+    /api/thought/:thoughtId - update a thought by ID
+DELETE:
+    /api/users/:userId - delete a user by ID
+    /api/users/:userId/friends/:friendId - delete a friend by ID
+    /api/thoughts/:thoughtId - delete thought by ID
+    /api/thoughts/:thoughtId/reactions/:reactionId - delete reaction by ID
+
 
 ### Walkthrough Video:
 
